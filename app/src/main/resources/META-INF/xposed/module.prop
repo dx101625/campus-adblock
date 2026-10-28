@@ -1,0 +1,9 @@
+name=校园设备去广告
+version=1.6.1
+versionCode=24
+author=campus
+description=去除胖乖生活(com.qiekj.user)与智趣校园(com.klcxkj.zqxy)的开屏、横幅、原生、悬浮与弹窗广告，拦截摇一摇与误触跳转；胖乖侧可记住设备二维码后自动识别、自动选机、直达订单预览（不代付）。
+minApiVersion=101
+targetApiVersion=102
+staticScope=true
+autoHotReload=true

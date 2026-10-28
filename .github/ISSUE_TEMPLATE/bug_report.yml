@@ -1,0 +1,31 @@
+name: 问题反馈
+description: 提交可复现的问题与脱敏诊断
+title: "[问题] "
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 发生了什么
+      description: 说明期望结果与实际结果。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      placeholder: "1. 选择哪种使用模式\n2. 从普通图标还是设备入口打开\n3. 停在哪个页面"
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostic
+    attributes:
+      label: 脱敏诊断
+      description: 从模块运行详情复制。提交前自行核对，删掉设备码、账号、订单及支付信息；截图也请遮挡。
+      render: text
+  - type: input
+    id: versions
+    attributes:
+      label: 系统、模块与目标App版本
+      placeholder: "Android版本 / 模块版本 / 胖乖或智趣版本"
+    validations:
+      required: true
