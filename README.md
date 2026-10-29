@@ -5,16 +5,9 @@
   <p><strong>少一点广告，少几步操作。</strong></p>
   <p>一个模块 · 两个 App · 本地运行 · 使用方式由你决定</p>
   <p>
-    <img src="docs/images/badges/java.svg" alt="Java 17 · 业务规则" />
-    <img src="docs/images/badges/compose.svg" alt="Kotlin 与 Jetpack Compose · 原生界面" />
-    <img src="docs/images/badges/miuix.svg" alt="Miuix 0.9.4 · Backdrop 玻璃" />
-  </p>
-  <p>
     <a href="#下载"><img src="docs/images/badges/version.svg" alt="版本 1.6.1" /></a>
     <a href="#适配范围"><img src="docs/images/badges/android.svg" alt="最低系统声明 Android 7.0 及以上" /></a>
-    <img src="docs/images/badges/framework.svg" alt="libxposed API 102" />
     <a href="LICENSE"><img src="docs/images/badges/license.svg" alt="MIT License" /></a>
-    <a href="https://github.com/dx101625"><img src="docs/images/badges/author.svg" alt="作者 dx101625" /></a>
   </p>
   <p>
     <a href="#下载">下载 APK</a> ·
