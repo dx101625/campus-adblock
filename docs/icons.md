@@ -1,5 +1,7 @@
 # 图标来源与维护
 
+README的五枚徽章使用本地SVG、统一30px高度和圆角布局，可运行`python tools/generate_badges.py`重新生成。Android和Kotlin标记来自[Simple Icons](https://github.com/simple-icons/simple-icons)，适用[CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md)；盾牌和图层标记沿用下述Lucide图标及许可。徽章不引用外部图片或动态服务。
+
 导航、设备分类、设置、箭头、勾选和状态图标来自[Lucide](https://github.com/lucide-icons/lucide)，使用24px SVG、2px圆端描边，转换为Android VectorDrawable后按主题着色，无额外运行依赖。
 
 原始SVG、路径及blob SHA固定在[tools/lucide-icons.json](../tools/lucide-icons.json)，可运行python tools/generate_icons.py重新转换；脚本不依赖联网。完整上游许可位于app/src/main/assets/licenses/LUCIDE-LICENSE.txt，保留Lucide ISC和Feather MIT的原始版权信息。应用内“关于 → 引用与许可 → Lucide”可阅读许可全文。

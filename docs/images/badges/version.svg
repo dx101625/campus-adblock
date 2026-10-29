@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="122" height="20" role="img" aria-label="Version: 1.6.1">
-<title>Version: 1.6.1</title><clipPath id="r"><rect width="122" height="20" rx="3"/></clipPath>
-<g clip-path="url(#r)"><rect width="68" height="20" fill="#48515e"/><rect x="68" width="54" height="20" fill="#3b5bff"/></g>
-<g fill="#fff" font-family="Verdana,Arial,sans-serif" font-size="11" text-anchor="middle"><text x="34.0" y="14">Version</text><text x="95.0" y="14">1.6.1</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="91" height="30" viewBox="0 0 91 30" role="img" aria-label="Version 1.6.1">
+<title>Version 1.6.1</title>
+<rect x=".5" y=".5" width="90" height="29" rx="14.5" fill="#EFF3FF" stroke="#DCE4FF"/>
+<g color="#3B55D9" transform="translate(11 7) scale(.666667)"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3H5a2 2 0 0 0-2 2v6l9 9a2 2 0 0 0 3 0l5-5a2 2 0 0 0 0-3Z"/><circle cx="7.5" cy="7.5" r="1" fill="currentColor" stroke="none"/></g></g>
+<text x="35" y="19.2" fill="#3B55D9" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11.5" font-weight="600">v1.6.1</text>
+</svg>
