@@ -1,0 +1,60 @@
+# 构建产物
+build/
+dist/
+*.apk
+*.apk.idsig
+*.dex
+
+# 签名材料：绝不入库（丢了只能换签名重发）
+signing/
+*.p12
+*.jks
+*.keystore
+password.txt
+
+# 本地抓的证据 / 截图 / 日志
+evidence/
+*.log
+*.png
+*.jpg
+!.docs/*.png
+!docs/images/*.png
+
+# 反编译产物，永远不上传
+decompiled/
+jadx-out/
+app-debug/
+*.jar
+
+# 编辑器 / 系统
+.gradle/
+.kotlin/
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+RECOVERY.md
+# Pinned local Miuix build runtime and QA artifacts
+/tools/cache/
+/tools/android-sdk/
+/tools/gradle-9.7.1/
+/tools/gradle-home/
+/tools/miuix-reference/
+/local.properties
+/.gradle/
+/artifacts/
+
+/tools/backdrop-reference/
+/tools/ksu-glass-reference/
+/tools/libxposed-api/
+
+# Local migration helpers and unselected icon explorations are not release source.
+/tools/download_tools.py
+/tools/prepare_glass.py
+/docs/branding/
+
+# Application artwork is source material and must be included when publishing.
+!app/src/main/res/**/*.png
+!app/src/main/res/**/*.jpg
+!app/src/main/res/**/*.webp

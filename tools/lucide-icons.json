@@ -1,0 +1,156 @@
+{
+  "house": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\" />\n  <path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "10e4097e290fdb2f1f919b264bf4e3095348de7c",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/house.svg",
+    "display_title": "house.svg"
+  },
+  "sliders-horizontal": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M10 5H3\" />\n  <path d=\"M12 19H3\" />\n  <path d=\"M14 3v4\" />\n  <path d=\"M16 17v4\" />\n  <path d=\"M21 12h-9\" />\n  <path d=\"M21 19h-5\" />\n  <path d=\"M21 5h-7\" />\n  <path d=\"M8 10v4\" />\n  <path d=\"M8 12H3\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "819f80c1f0cc7fade2088fb776030e348657a486",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/sliders-horizontal.svg",
+    "display_title": "sliders-horizontal.svg"
+  },
+  "info": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <circle cx=\"12\" cy=\"12\" r=\"10\" />\n  <path d=\"M12 16v-4\" />\n  <path d=\"M12 8h.01\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "2a46eac2b55a1ead226035d1efa8721f6f08bd17",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/info.svg",
+    "display_title": "info.svg"
+  },
+  "settings": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915\" />\n  <circle cx=\"12\" cy=\"12\" r=\"3\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "4c6263af909841a3911f41a385021778eacba736",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/settings.svg",
+    "display_title": "settings.svg"
+  },
+  "chevron-right": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"m9 18 6-6-6-6\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "db62a0c20181edd6173722b2a483e0b85e30f240",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/chevron-right.svg",
+    "display_title": "chevron-right.svg"
+  },
+  "arrow-left": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"m12 19-7-7 7-7\" />\n  <path d=\"M19 12H5\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "b40bff851c85eff44f678eb7984fc6070d7ea721",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/arrow-left.svg",
+    "display_title": "arrow-left.svg"
+  },
+  "shield-check": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\" />\n  <path d=\"m9 12 2 2 4-4\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "da48f664e51be4ceb800dbe4f6c10c5e7cfa800e",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/shield-check.svg",
+    "display_title": "shield-check.svg"
+  },
+  "scan-qr-code": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M17 12v4a1 1 0 0 1-1 1h-4\" />\n  <path d=\"M17 3h2a2 2 0 0 1 2 2v2\" />\n  <path d=\"M17 8V7\" />\n  <path d=\"M21 17v2a2 2 0 0 1-2 2h-2\" />\n  <path d=\"M3 7V5a2 2 0 0 1 2-2h2\" />\n  <path d=\"M7 17h.01\" />\n  <path d=\"M7 21H5a2 2 0 0 1-2-2v-2\" />\n  <rect x=\"7\" y=\"7\" width=\"5\" height=\"5\" rx=\"1\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "1fd352f83a36146ef41abd9c1e088a1170b7d014",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/scan-qr-code.svg",
+    "display_title": "scan-qr-code.svg"
+  },
+  "washing-machine": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M3 6h3\" />\n  <path d=\"M17 6h.01\" />\n  <rect width=\"18\" height=\"20\" x=\"3\" y=\"2\" rx=\"2\" />\n  <circle cx=\"12\" cy=\"13\" r=\"5\" />\n  <path d=\"M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "85ce3db60153ed06f96a0d6e496edb9a903578c6",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/washing-machine.svg",
+    "display_title": "washing-machine.svg"
+  },
+  "droplets": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z\" />\n  <path d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "b531e9c63603a18060280836346627d5310603d0",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/droplets.svg",
+    "display_title": "droplets.svg"
+  },
+  "smartphone": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\" />\n  <path d=\"M12 18h.01\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "fc840174a324d965ad4dd420a1c99530a414c326",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/smartphone.svg",
+    "display_title": "smartphone.svg"
+  },
+  "wind": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M12.8 19.6A2 2 0 1 0 14 16H2\" />\n  <path d=\"M17.5 8a2.5 2.5 0 1 1 2 4H2\" />\n  <path d=\"M9.8 4.4A2 2 0 1 1 11 8H2\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "a6498753d927337d68a41cdaf7b35f54bb7690e8",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/wind.svg",
+    "display_title": "wind.svg"
+  },
+  "book-open": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M12 5v16\" />\n  <path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "9e0ace59b788e2b45fc35d9fbf68c2a80bd518bc",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/book-open.svg",
+    "display_title": "book-open.svg"
+  },
+  "code-xml": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"m18 16 4-4-4-4\" />\n  <path d=\"m6 8-4 4 4 4\" />\n  <path d=\"m14.5 4-5 16\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "74f2299eb3e31a2ea1ce971ae8b4c64bf00ede88",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/code-xml.svg",
+    "display_title": "code-xml.svg"
+  },
+  "circle-check": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <circle cx=\"12\" cy=\"12\" r=\"10\" />\n  <path d=\"m16 9-5.5 5.5L8 12\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "14e45c58c9ece47f2204e89d19d8463f485325a0",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/circle-check.svg",
+    "display_title": "circle-check.svg"
+  },
+  "clock-3": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <circle cx=\"12\" cy=\"12\" r=\"10\" />\n  <path d=\"M12 6v6h4\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "ae9b437bc5561da94bd68ffc0cbbf615abddbfe5",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/clock-3.svg",
+    "display_title": "clock-3.svg"
+  },
+  "check": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M20 6 9 17l-5-5\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "5abe1527434e7b251bde0661f99af96178976d8c",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/check.svg",
+    "display_title": "check.svg"
+  },
+  "circle": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <circle cx=\"12\" cy=\"12\" r=\"10\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "1717bb4ba7381455f5c85e69ac75c182c34ba1c9",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/circle.svg",
+    "display_title": "circle.svg"
+  },
+  "plus": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M5 12h14\" />\n  <path d=\"M12 5v14\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "41f92bb93eb6626368d71c9884127bbcf7d3ccdf",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/plus.svg",
+    "display_title": "plus.svg"
+  },
+  "minus": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M5 12h14\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "75093e27c20965c9e37fb9dcef9f939746c67578",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/minus.svg",
+    "display_title": "minus.svg"
+  },
+  "layers": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\" />\n  <path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\" />\n  <path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "a3b69ae319a8d3036bb5b26f92195bfe337e17bf",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/layers.svg",
+    "display_title": "layers.svg"
+  },
+  "activity": {
+    "content": "<svg\n  xmlns=\"http://www.w3.org/2000/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n>\n  <path d=\"M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2\" />\n</svg>\n",
+    "encoding": "utf-8",
+    "sha": "629b81c9fd020f3afec659daa5c9c7e5a1d07445",
+    "display_url": "https://github.com/lucide-icons/lucide/blob/main/icons/activity.svg",
+    "display_title": "activity.svg"
+  }
+}

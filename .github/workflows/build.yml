@@ -1,0 +1,45 @@
+name: Build and test
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.7.1'
+      - name: Prepare Android SDK and official compile-only API
+        shell: bash
+        run: |
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" 'platforms;android-37.0' 'build-tools;37.0.0'
+          python tools/prepare_api.py
+          printf 'CAMPUS_GRADLE=%s\n' "$(command -v gradle)" >> "$GITHUB_ENV"
+          printf 'CAMPUS_ANDROID_SDK=%s\n' "$ANDROID_HOME" >> "$GITHUB_ENV"
+          printf 'GRADLE_USER_HOME=%s\n' "$GITHUB_WORKSPACE/tools/gradle-home" >> "$GITHUB_ENV"
+      - name: Build unsigned release
+        run: python build.py --no-sign
+      - name: Run unit tests
+        run: gradle --no-daemon --console=plain :app:testDebugUnitTest
+      - name: Upload unsigned build and test reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: campus-adblock-unsigned
+          path: |
+            dist/*-unsigned.apk
+            dist/*-unsigned.sha256
+            app/build/reports/tests/testDebugUnitTest/
+            app/build/test-results/testDebugUnitTest/
+          retention-days: 14
+
+# Release signing remains local. This workflow needs no signing key, account token or device data.

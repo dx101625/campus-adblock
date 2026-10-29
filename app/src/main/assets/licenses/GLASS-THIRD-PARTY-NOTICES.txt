@@ -1,0 +1,16 @@
+Campus AdBlock glass navigation uses Apache License 2.0 components and examples:
+
+Backdrop / AndroidLiquidGlass 2.0.1
+Copyright 2025 Kyant
+https://github.com/Kyant0/AndroidLiquidGlass
+Example: app/src/commonMain/kotlin/com/kyant/backdrop/catalog/components/LiquidBottomTabs.kt
+
+Miuix 0.9.4 IosLiquidGlassNavigationBar example
+Copyright 2026 compose-miuix-ui contributors
+https://github.com/compose-miuix-ui/miuix/blob/v0.9.4/example/shared/src/commonMain/kotlin/component/liquid/LiquidGlassNavigationBar.kt
+The upstream example is itself adapted from Kyant0/AndroidLiquidGlass.
+
+The layered optical selection is adapted to Campus AdBlock's compact three-tab
+layout, existing configuration flow, and immediate drag-to-page interaction.
+The full Apache License 2.0 text accompanies this file as
+BACKDROP-APACHE-2.0.txt and MIUIX-APACHE-2.0.txt.

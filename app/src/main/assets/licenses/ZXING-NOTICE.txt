@@ -1,0 +1,5 @@
+ZXing Core 3.5.3
+Copyright ZXing authors.
+Project: https://github.com/zxing/zxing/tree/zxing-3.5.3
+License: Apache License 2.0 (ZXING-APACHE-2.0.txt)
+Used for local QR-code image decoding only. No camera or network permission.

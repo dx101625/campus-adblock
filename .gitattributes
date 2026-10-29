@@ -1,0 +1,10 @@
+# Keep GitHub language labels aligned with the actual Java/Kotlin source.
+*.java linguist-language=Java
+*.kt linguist-language=Kotlin
+*.kts linguist-language=Kotlin
+
+# Documentation, artwork and Android resources are not program source.
+docs/** linguist-documentation=true
+app/artwork/** linguist-detectable=false
+app/src/main/res/** linguist-detectable=false
+app/src/main/assets/licenses/** linguist-documentation=true

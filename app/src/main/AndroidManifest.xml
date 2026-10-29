@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.campus.adblock">
+
+    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34"
+        tools:overrideLibrary="io.github.libxposed.service,io.github.libxposed.service.interfaces" />
+
+    <!-- targetSdk 30+ 的包可见性：设置界面要能判断目标 App / LSPosed 有没有装 -->
+    <queries>
+        <package android:name="com.qiekj.user" />
+        <package android:name="com.klcxkj.zqxy" />
+        <package android:name="org.lsposed.manager" />
+        <package android:name="com.solohsu.android.edxp.manager" />
+        <package android:name="me.weishu.kernelsu" />
+        <package android:name="com.lsposed.manager" />
+        <package android:name="com.topjohnwu.magisk" />
+    </queries>
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme"
+        android:allowBackup="false"
+        android:supportsRtl="true">
+
+        <!-- Official service needs API26. Its provider and client bridge remain
+             disabled on API24-25; the existing settings UI stays installable. -->
+        <provider
+            android:name="io.github.libxposed.service.XposedProvider"
+            android:authorities="${applicationId}.XposedService"
+            android:enabled="@bool/framework_service_enabled"
+            android:directBootAware="true"
+            android:exported="true" />
+
+        <!-- 包可见性受限时走显式广播上报（provider 会报 Unknown authority） -->
+        <receiver
+            android:name=".StatusReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.campus.adblock.STATUS" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 目标 App 里的 hook 装好后跨进程调一次，把「已生效」写进模块自己的首选项 -->
+        <provider
+            android:name=".StatusProvider"
+            android:authorities="com.campus.adblock.status"
+            android:exported="true"
+            android:enabled="true" />
+
+        <activity android:name=".DeviceLaunchActivity" android:exported="true" android:excludeFromRecents="true"
+            android:theme="@style/AppTheme" android:label="@string/app_name" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
