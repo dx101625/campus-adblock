@@ -84,7 +84,7 @@
 
 ## 下载
 
-**首个公开版正在准备，定稿版本为 v1.6.1。** 正式安装包发布后，可在 [GitHub Releases](https://github.com/dx101625/campus-adblock/releases) 获取 APK、SHA-256 与发布说明。
+**首个公开版本：v1.6.1。** [下载正式 APK](https://github.com/dx101625/campus-adblock/releases/download/v1.6.1/campus-adblock-v1.6.1.apk) · [发布说明、源码与 SHA-256](https://github.com/dx101625/campus-adblock/releases/tag/v1.6.1)。
 
 发布包使用项目原签名，后续版本可覆盖升级。GitHub Actions 的构建产物是供开发检查的未签名包，与正式发布包分开。
 
