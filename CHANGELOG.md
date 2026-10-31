@@ -3,6 +3,13 @@
 版本号规则：`主版本.次版本.修订号`，与 APK 的 `versionCode` 一起在
 `app/src/main/resources/META-INF/xposed/module.prop`、`build.py` 和 `app/build.gradle.kts` 里同步。
 
+## 1.6.2 — 2026-10-31
+
+- 自动流程简化为一个开关：开启直达订单预览，关闭仅去广告。
+- 移除报价核对与连续失败暂停的阻断，旧启动限制和档案模式不再覆盖总开关。
+- 保留机号、档位、支付偏好及现有Miuix与玻璃界面；付款仍由用户确认。
+- 原签名覆盖安装；30项单元测试通过，真机验证开启、关闭及中断后重进。
+
 ## 1.6.1 — 2026-10-28
 
 - 广告与外跳收为两个常用开关和一个应用例外入口，移除强度与临时放行界面；原有配置键、规则与默认值保留。
@@ -160,7 +167,8 @@
   实现里 remote prefs 只读、写入被丢弃。改成目标进程通过
   \ContentProvider.call(com.campus.adblock.status, "beat")\ 上报，模块进程内写自己的
   \campus_status\ 首选项，界面直接读同一份，不再有缓存/丢写问题。
-- **修掉设置界面一打开就闪退**：\ow()\ 内部已 \ddView\，\uildUi()\ 又加了一次，
+- **修掉设置界面一打开就闪退**：\
+ow()\ 内部已 \ddView\，\uildUi()\ 又加了一次，
   同一 View 二次挂载抛 \IllegalStateException: The specified child already has a parent\。
 - 版本 1.1.0 / versionCode 2；签名与 1.0.0 相同（覆盖安装不需要卸载）。
 ## 1.0.0 — 2026-10-26

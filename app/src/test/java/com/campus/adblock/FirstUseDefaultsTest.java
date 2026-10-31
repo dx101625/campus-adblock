@@ -37,7 +37,7 @@ public class FirstUseDefaultsTest {
         assertTrue(Cfg.zqxyAds); assertTrue(Cfg.zqxyTab);
         assertTrue(Cfg.blockShake); assertTrue(Cfg.blockJump);
         assertEquals("standard",Cfg.jumpMode); assertEquals("",Cfg.jumpAllowed);
-        assertTrue(Cfg.priceGuard); assertTrue(Cfg.pauseOnFailure);
+        assertFalse(Cfg.priceGuard); assertFalse(Cfg.pauseOnFailure);
         assertTrue("Reading defaults must not persist a device or change settings",p.getAll().isEmpty());
     }
     @Test public void firstExplicitAdsOnlyChoiceDisablesAllAutomaticSelections() {
@@ -47,13 +47,19 @@ public class FirstUseDefaultsTest {
         assertFalse(Cfg.qiekjScan); assertFalse(Cfg.qiekjSelections); assertFalse(Cfg.qiekjAdvance);
         assertTrue(Cfg.qiekjAds); assertTrue(Cfg.qiekjSplash);
     }
-    @Test public void shortcutOnlyPreferenceKeepsOrdinaryLaunchManual() {
+    @Test public void legacyLaunchRestrictionCannotOverrideEnabledSwitch() {
         MemoryPreferences p = new MemoryPreferences();
         p.values.put("q.mode","preview"); p.values.put("q.launch","shortcut");
+        p.values.put("q.price.guard",true); p.values.put("q.pause",true);
         Cfg.load(p);
-        assertEquals("ads",Cfg.automationMode);
-        assertFalse(Cfg.qiekjScan); assertFalse(Cfg.qiekjSelections); assertFalse(Cfg.qiekjAdvance);
-        assertEquals("preview",AutomationStore.mode(p));
+        assertEquals("preview",Cfg.automationMode);
+        assertTrue(Cfg.qiekjScan); assertTrue(Cfg.qiekjSelections); assertTrue(Cfg.qiekjAdvance);
+        assertFalse(Cfg.priceGuard); assertFalse(Cfg.pauseOnFailure);
+    }
+    @Test public void legacyDeviceModeMigratesToEnabledAutomation() {
+        MemoryPreferences p = new MemoryPreferences(); p.values.put("q.mode","device");
+        Cfg.load(p);
+        assertEquals("preview",Cfg.automationMode); assertTrue(Cfg.qiekjAdvance);
     }
     private static class MemoryPreferences implements SharedPreferences {
         final Map<String,Object> values = new HashMap<>();

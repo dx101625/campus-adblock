@@ -41,20 +41,10 @@ class HabitTools(private val activity: SettingsActivity, private val changed: ()
     @Composable fun Modes() {
         val mode = remember(LocalPreferencesRevision.current) { AutomationStore.mode(activity.getSharedPreferences(Cfg.GROUP, 0)) }
         Card(Modifier.fillMaxWidth()) {
-            Choice("全局使用方式", mode, listOf("ads", "device", "preview"), listOf("仅去广告", "设备页", "订单预览"), "q.mode") {
-                AutomationStore.setMode(activity, it); changed()
-            }
-            val explanation = when (mode) {
-                "ads" -> "普通打开只清理广告，识别、选机、优惠和支付选择全部由你操作。主动使用独立设备入口时，遵循该档案的模式。"
-                "device" -> "识别默认设备并按偏好预选，停在设备页；后续由你操作。"
-                else -> "识别设备、应用预选并到达订单预览；最终付款由你确认。"
-            }
-            Text(explanation, color = MiuixTheme.colorScheme.onSurfaceVariantSummary, style = MiuixTheme.textStyles.footnote1, modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp))
-            Choice("何时使用自动流程", Cfg.uiString(activity, "q.launch", "direct"), listOf("direct", "shortcut"), listOf("普通打开", "仅设备入口"), "q.launch") {
-                Cfg.uiPutString(activity, "q.launch", it); changed()
-            }
-            Text("仅设备入口：平常打开胖乖只去广告；从桌面设备入口或档案按钮打开时，才应用该档案的使用方式。设备档案可覆盖全局偏好。",
-                color = MiuixTheme.colorScheme.onSurfaceVariantSummary, style = MiuixTheme.textStyles.footnote2, modifier = Modifier.padding(16.dp))
+            SwitchPreference(checked = mode != "ads", onCheckedChange = {
+                AutomationStore.setMode(activity, if (it) "preview" else "ads"); changed()
+            }, title = "自动跳转订单预览", summary = "开启后识别设备并按偏好直达订单预览；关闭后仅去广告，设备与后续步骤由你操作。付款仍需手动确认。", modifier = Modifier.testTag("q.auto"))
+
         }
     }
     @Composable fun HomeDevice(manage: () -> Unit) {
@@ -63,8 +53,8 @@ class HabitTools(private val activity: SettingsActivity, private val changed: ()
         val selected = devices.firstOrNull { it.id == Cfg.uiString(activity, "q.profile", "") && it.qr == Cfg.uiString(activity, "q.qr", "") }
             ?: if (!preferences.contains("q.profile")) devices.firstOrNull { it.qr == Cfg.uiString(activity, "q.qr", "") } else null
         val global = AutomationStore.mode(activity.getSharedPreferences(Cfg.GROUP, 0))
-        val mode = selected?.options?.mode?.takeIf { it != "inherit" } ?: global
-        val ordinary = PreferenceRules.launchMode(global, mode, Cfg.uiString(activity, "q.launch", "direct") == "shortcut", false)
+        val mode = if (global == "ads") "ads" else "preview"
+        val ordinary = mode
         Card(Modifier.fillMaxWidth().padding(top = 8.dp)) {
             BasicComponent(title = selected?.let { "默认设备 · ${it.name}" } ?: "默认设备", summary = listOfNotNull(selected?.group?.takeIf { it.isNotBlank() }, "普通打开：${LocalData.modeLabel(ordinary)}", selected?.let { "设备入口：${LocalData.modeLabel(mode)}" }).joinToString(" · "), startAction = { ProfileSymbol(selected?.icon ?: "other") })
             if (selected != null) Row(Modifier.padding(8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -76,11 +66,6 @@ class HabitTools(private val activity: SettingsActivity, private val changed: ()
     @Composable private fun Toggle(key: String, title: String, summary: String = "") {
         val value = remember(LocalPreferencesRevision.current, key) { Cfg.uiBoolean(activity, key, true) }
         SwitchPreference(checked = value, onCheckedChange = { Cfg.uiPutBoolean(activity, key, it); changed() }, title = title, summary = summary, modifier = Modifier.testTag(key))
-    }
-    @Composable fun Safeguards() {
-        Toggle("q.pause", "连续失败后暂停直达", "同一设备连续识别失败3次后暂停；不会自动打开相机。")
-        Toggle("q.price.guard", "报价与档位变化提醒", "同一设备、机号与偏好的报价或时长改变时，停在设备页。首次只建立本机参考，不代表已付款。")
-        BasicComponent(title = "暂停状态与报价变化", summary = "恢复自动直达，或核对后接受新的报价参考", onClick = ::showSafety)
     }
     @Composable fun Appearance() {
         val revision = LocalPreferencesRevision.current
@@ -94,30 +79,6 @@ class HabitTools(private val activity: SettingsActivity, private val changed: ()
     @Composable fun Dialogs() {
         revision
         val maxHeight = minOf(360.dp, LocalConfiguration.current.screenHeightDp.dp * .5f)
-        GlassDialog(show = safety, title = "暂停状态与报价变化", onDismissRequest = { safety = false }) {
-            Column {
-                val failures = RuntimeStore.json(activity, "failures")
-                val count = failures.keys().asSequence().count { failures.optInt(it) >= 3 }
-                val quote = RuntimeStore.json(activity, "quote.pending")
-                Column(Modifier.heightIn(max = maxHeight).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Text(if (count == 0) "当前没有因连续识别失败而暂停的设备。" else "$count 台设备因连续识别失败而暂停。恢复前请检查设备码与网络。", color = MiuixTheme.colorScheme.onSurface)
-                    ToolAction("恢复自动直达", Modifier.fillMaxWidth(), true) { RuntimeStore.resume(activity); revision++; toast("已恢复，下一次打开目标App或设备入口时重试") }
-                    if (quote.has("key")) {
-                        Text("检测到报价或档位变化\n之前：${money(quote.optLong("oldCents"))}\n现在：${money(quote.optLong("cents"))}" +
-                            if (kotlin.math.abs(quote.optDouble("oldDuration") - quote.optDouble("duration")) > .000001) "\n档位时长也发生了变化，请核对原App设备页。" else "",
-                            color = MiuixTheme.colorScheme.onSurface)
-                        ToolAction("核对并接受新参考", Modifier.fillMaxWidth()) { accept = true }
-                    } else Text("暂无待确认的报价变化。参考来自原App展示的设备报价，保存在本机，不是支付或消费记录。", color = MiuixTheme.colorScheme.onSurfaceVariantSummary, style = MiuixTheme.textStyles.footnote1)
-                }
-                ToolAction("关闭", Modifier.fillMaxWidth()) { safety = false }
-            }
-        }
-        GlassDialog(show = accept, title = "接受当前报价与档位？", summary = "仅更新本机参考，不会提交订单或付款。请先核对原App设备页。", onDismissRequest = { accept = false }) {
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                ToolAction("取消", Modifier.weight(1f)) { accept = false }
-                ToolAction("接受新参考", Modifier.weight(1f), true) { RuntimeStore.acceptQuote(activity); accept = false; revision++; toast("参考已更新，下次使用设备入口时重新检查") }
-            }
-        }
         GlassDialog(show = grants, title = "临时放行跳转", summary = "只允许所选目标App打开所选应用；一次放行最迟5分钟失效，不会自动重放被拦截的跳转。", onDismissRequest = { grants = false }) {
             val grantHeight = minOf(520.dp, (LocalConfiguration.current.screenHeightDp.dp - 220.dp).coerceAtLeast(120.dp))
             Column(Modifier.heightIn(max = grantHeight).verticalScroll(rememberScrollState())) {

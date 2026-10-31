@@ -22,7 +22,7 @@ import top.yukonga.miuix.kmp.theme.MiuixTheme
 
 @Composable internal fun ProfileOptionsForm(options: DeviceOptions, onChange: (DeviceOptions) -> Unit) {
     Text("独立偏好 · 跟随全局的项目会继承当前全局设置。仅去广告时不应用预选。", color = MiuixTheme.colorScheme.onSurfaceVariantSummary, style = MiuixTheme.textStyles.footnote1)
-    ProfileChoice("使用方式", options.mode, LocalData.modeValues, listOf("全局", "去广告", "设备页", "预览"), "profile.mode") { onChange(options.copy(mode = it)) }
+
     ProfileChoice("机号", options.machine, listOf("inherit", "left1", "right2", "auto", "none"), listOf("全局", "左1", "右2", "自动", "手动"), "profile.machine") { onChange(options.copy(machine = it)) }
     ProfileChoice("档位", options.tier, listOf("inherit", "shortest", "longest"), listOf("全局", "最短", "最长"), "profile.tier") { onChange(options.copy(tier = it)) }
     ProfileChoice("支付方式", options.pay, listOf("inherit", "unionpay", "alipay", "wechat", "none"), listOf("全局", "银联", "支付宝", "微信", "原App"), "profile.pay") { onChange(options.copy(pay = it)) }

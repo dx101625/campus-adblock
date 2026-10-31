@@ -2438,11 +2438,6 @@ public class CampusAdBlockModule extends XposedModule {
                 retryAdvance(a);
                 return;
             }
-            if (!DeviceDefaults.checkAutomationQuote(a)) {
-                sAutoAdvance.set(false);
-                RuntimeEvents.note(a,"price_changed","报价或档位需要核对，已停留设备页；请手动核对，若有新报价可在模块中确认");
-                android.widget.Toast.makeText(a,"报价需核对，已停留设备页",android.widget.Toast.LENGTH_LONG).show();return;
-            }
             sAutoAdvance.set(false);
             moduleLog(Log.INFO, TAG, "auto advance: 机器/档位已按设置落定，替用户点一次「下一步」（不点去支付）");
             sPreviewUntil = android.os.SystemClock.elapsedRealtime()+15_000L;

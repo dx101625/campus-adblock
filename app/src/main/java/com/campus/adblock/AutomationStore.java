@@ -60,8 +60,9 @@ public final class AutomationStore {
                 for (String key:new String[]{"coupon","points"}) if (!o.optString(key,"inherit").equals("inherit")) v.putBoolean("q."+key,"yes".equals(o.optString(key)));
             }
         }
-        mode=PreferenceRules.launchMode(global,mode,"shortcut".equals(p.getString("q.launch","direct")),pending);
+        mode="ads".equals(global) ? "ads" : "preview";
         if ("_manual".equals(id)) mode="ads";
+        v.putBoolean("q.price.guard",false);v.putBoolean("q.pause",false);
         v.putString("runtime.mode",mode);v.putBoolean("runtime.selections",!"ads".equals(mode));
         v.putBoolean("q.scan",!"ads".equals(mode));v.putBoolean("q.advance","preview".equals(mode));
         Bundle out=new Bundle();out.putBoolean("ok",true);out.putBundle("values",v);

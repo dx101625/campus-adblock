@@ -39,9 +39,9 @@ import top.yukonga.miuix.kmp.theme.MiuixTheme
             }
         }
         HelpStep("01", "启用与作用域", "在LSPosed或兼容框架中启用本模块，勾选胖乖生活或智趣校园，再完全退出并重开目标App。KernelSU本身不代替LSPosed。")
-        HelpStep("02", "选择适合自己的方式", "功能 → 使用习惯。喜欢自己操作就选仅去广告；想先核对参数就停在设备页；想减少步骤就进入订单预览。")
+        HelpStep("02", "选择适合自己的方式", "功能 → 使用习惯。只需一个自动跳转开关：开启直达订单预览，关闭后自己操作。")
         Card(Modifier.fillMaxWidth()) {
-            listOf("仅去广告" to "扫码、选机和支付全部自己操作", "设备页" to "自动识别并预选，核对后自己继续", "订单预览" to "自动走到预览，最终付款由你确认").forEachIndexed { i, pair ->
+            listOf("关闭" to "只去广告，扫码、选机和后续步骤自己操作", "开启" to "自动识别并预选，直达订单预览；付款自己确认").forEachIndexed { i, pair ->
                 Row(Modifier.padding(horizontal = 18.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
                     Text("${i + 1}", color = MiuixTheme.colorScheme.primary, fontWeight = FontWeight.Bold, modifier = Modifier.width(26.dp))
                     Column { Text(pair.first, color = MiuixTheme.colorScheme.onSurface, style = MiuixTheme.textStyles.body2); Text(pair.second, color = MiuixTheme.colorScheme.onSurfaceVariantSummary, style = MiuixTheme.textStyles.footnote1) }
@@ -51,12 +51,12 @@ import top.yukonga.miuix.kmp.theme.MiuixTheme
         HelpStep("03", "准备设备码", "功能 → 设备码与常用设备。可选择图片转设备码、粘贴链接，或先在胖乖里主动扫一次。识别结果可复制或设为默认，也能收藏为独立档案。图片在本机识别。")
         Text("常见问题 · 点击展开", color = MiuixTheme.colorScheme.onSurfaceVariantSummary, style = MiuixTheme.textStyles.footnote1, modifier = Modifier.padding(start = 10.dp, top = 8.dp))
         Card(Modifier.fillMaxWidth()) {
-            HelpQuestion("manual", "平时手动，偶尔才想直达？", "在使用习惯中选择“仅设备入口”。普通打开胖乖只去广告；主动点击档案或桌面设备入口，才应用该设备的独立偏好。")
+            HelpQuestion("manual", "平时手动，偶尔才想直达？", "需要直达时开启自动跳转，不需要时关闭。所有设备入口统一遵循这个开关，机号与档位仍按设备偏好选择。")
             HelpQuestion("shortcut", "怎样添加桌面设备入口？", "收藏并保存设备后，编辑这台设备，选择“添加到桌面”。桌面可能要求创建快捷方式权限。长按排序手柄可调整常用设备顺序，删除后短时间内可撤销。")
-            HelpQuestion("paused", "识别失败或报价变化怎么办？", "同一码连续失败3次会暂停直达；功能 → 自动流程保护中可恢复。报价或时长变化会停在设备页，核对后可手动继续，或明确接受新参考。参考不代表付款或消费。")
+            HelpQuestion("paused", "自动跳转没有成功怎么办？", "自动流程只由功能 → 使用习惯中的开关控制。不需要自动跳转时关闭即可；识别遇到网络或设备异常时可手动操作，下次重新打开会重试。最终付款始终由你确认。")
             HelpQuestion("jump", "正常跳转被拦住了？", "功能 → 广告与外跳 → 允许打开的应用，开启需要正常跳转的应用即可。重启目标App后重新操作；也可以关闭广告外跳拦截。支付应用不在广告拦截名单中。")
             HelpQuestion("scope", "支持哪些App和设备？", "作用于胖乖生活、智趣校园独立App，不覆盖微信或支付宝内的小程序。自动选机、档位与推进目前在胖乖1.144.0吹风设备页验证，其他设备类型请先手动操作。")
-            HelpQuestion("privacy", "图片、配置和付款如何处理？", "图片识别、设备档案及报价参考保存在本机。设备查询和支付仍由原App处理。模块不代付、不创建订单、不启动设备；配置备份默认不包含设备码。")
+            HelpQuestion("privacy", "图片、配置和付款如何处理？", "图片识别与设备档案保存在本机。设备查询和支付仍由原App处理。模块不代付、不创建订单、不启动设备；配置备份默认不包含设备码。")
         }
     }
 }

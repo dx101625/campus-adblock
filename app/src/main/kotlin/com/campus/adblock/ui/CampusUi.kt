@@ -228,7 +228,7 @@ class CampusUi(private val activity: SettingsActivity, saved: Bundle?) : AutoClo
                         "qiekj" -> QiekjPage()
                         "zqxy" -> Section("广告与运营入口") { Setting("z.ads", true, s("ads"), s("z_ads_sub")); Divider(); Setting("z.tab", true, s("z_tab")) }
                         "jumps" -> JumpsPage()
-                        "safety" -> { Description("异常时停在当前页面，你可以核对后手动继续。"); Section("识别与报价") { habits.Safeguards() } }
+                        "safety" -> { habits.Modes() }
                         "tools" -> ToolsPage()
                         "appearance" -> { Description("只调整模块界面；系统关闭动画或触感时，仍遵循系统设置。"); Section("界面与交互") { habits.Appearance() } }
                         "licenses" -> OpenSourcePage(activity)
@@ -299,7 +299,7 @@ class CampusUi(private val activity: SettingsActivity, saved: Bundle?) : AutoClo
         val count = remember(revision) { LocalData.devices(activity).size }
         Description("按类别调整，设置即时保存；重启目标App后生效。")
         Section("按自己的习惯") {
-            Category("使用习惯", "${LocalData.modeLabel(mode)} · " + if (Cfg.uiString(activity, "q.launch", "direct") == "shortcut") "仅设备入口应用偏好" else "普通打开按此方式", R.drawable.ic_tab_features, "habits")
+            Category("使用习惯", if (mode == "ads") "自动跳转已关闭 · 仅去广告" else "自动跳转已开启 · 直达订单预览", R.drawable.ic_tab_features, "habits")
             Divider(); Category("设备码与常用设备", "${count}台收藏 · 图片识码 · 默认设备", R.drawable.ic_scan, "devices")
         }
         Section("目标App") {
@@ -308,7 +308,7 @@ class CampusUi(private val activity: SettingsActivity, saved: Bundle?) : AutoClo
         }
         Section("拦截与保护") {
             Category("广告与外跳", "防摇一摇、广告外跳与允许的应用", R.drawable.ic_shield, "jumps")
-            Divider(); Category("自动流程保护", "连续失败暂停与报价变化提醒", R.drawable.ic_shield, "safety")
+
         }
         Section("工具") { Category("配置与诊断", "备份恢复、兼容性体检与运行记录", R.drawable.ic_source_code, "tools") }
     }

@@ -23,11 +23,13 @@
   </p>
 </div>
 
+> 当前版本 **v1.6.2 / versionCode 25**。下方界面截图保留 v1.6.1 历史预览；使用习惯现已简化为一个开关。
+
 ## 项目简介
 
 **校园设备去广告**是面向胖乖生活、智趣校园独立 App 的 LSPosed 模块。清理已匹配的开屏、横幅、信息流和弹窗广告，减少摇一摇与推广外跳，并提供可选的设备识别和参数预选。
 
-喜欢自己操作，就选“仅去广告”；想先核对设备参数，就停在设备页；希望减少重复步骤，可以直达订单预览。**最终付款由你确认，模块不代付、不创建订单、不启动设备。**
+在“功能 → 使用习惯”中，一个开关控制自动流程：开启直达订单预览，关闭仅去广告、自己操作。v1.6.2 已移除报价核对和连续失败暂停的阻断。**最终付款由你确认，模块不代付、不创建订单、不启动设备。**
 
 设置界面使用 Miuix 与 Jetpack Compose，提供实时玻璃底栏、紧凑选择面板和轻微回弹；设备码识别、收藏、配置与运行摘要在本机处理。目标 App 的设备查询、登录和支付仍由原 App 完成。
 
@@ -84,7 +86,7 @@
 
 ## 下载
 
-**首个公开版本：v1.6.1。** [下载正式 APK](https://github.com/dx101625/campus-adblock/releases/download/v1.6.1/campus-adblock-v1.6.1.apk) · [发布说明、源码与 SHA-256](https://github.com/dx101625/campus-adblock/releases/tag/v1.6.1)。
+**首个公开版本：v1.6.1。** [下载正式 APK](https://github.com/dx101625/campus-adblock/releases/download/v1.6.1/campus-adblock-v1.6.2.apk) · [发布说明、源码与 SHA-256](https://github.com/dx101625/campus-adblock/releases/tag/v1.6.2)。
 
 发布包使用项目原签名，后续版本可覆盖升级。GitHub Actions 的构建产物是供开发检查的未签名包，与正式发布包分开。
 

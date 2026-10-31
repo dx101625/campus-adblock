@@ -124,9 +124,9 @@ public final class Cfg {
             logEnabled = sp.getBoolean("g.log", logEnabled);
             String requested=sp.getString("q.mode","");
             automationMode=PreferenceRules.validMode(requested)?requested:PreferenceRules.mode(qiekjScan,qiekjAdvance);
-            if("shortcut".equals(sp.getString("q.launch","direct")))automationMode="ads";
+            automationMode="ads".equals(automationMode) ? "ads" : "preview";
             qiekjSelections=!"ads".equals(automationMode);qiekjScan=qiekjSelections;qiekjAdvance="preview".equals(automationMode);
-            priceGuard=sp.getBoolean("q.price.guard",true);pauseOnFailure=sp.getBoolean("q.pause",true);
+            priceGuard=false;pauseOnFailure=false;
             sLoaded = true;
         } catch (Throwable t) {
             ModuleLog.w("CampusAdBlock", "load config failed", t);
@@ -155,8 +155,8 @@ public final class Cfg {
         automationMode = values.getString("runtime.mode", PreferenceRules.mode(qiekjScan, qiekjAdvance));
         qiekjSelections = values.getBoolean("runtime.selections", !"ads".equals(automationMode));
         profileId = values.getString("runtime.profile", "");
-        priceGuard = values.getBoolean("q.price.guard", true);
-        pauseOnFailure = values.getBoolean("q.pause", true);
+        priceGuard = false;
+        pauseOnFailure = false;
         sLoaded = true;
     }
 
