@@ -5,7 +5,7 @@
   <p><strong>少一点广告，少几步操作。</strong></p>
   <p>一个模块 · 两个 App · 本地运行 · 使用方式由你决定</p>
   <p>
-    <a href="#下载"><img src="docs/images/badges/version.svg" alt="版本 1.6.1" /></a>
+    <a href="#下载"><img src="docs/images/badges/version.svg" alt="版本 1.6.3" /></a>
     <a href="#适配范围"><img src="docs/images/badges/android.svg" alt="最低系统声明 Android 7.0 及以上" /></a>
     <a href="LICENSE"><img src="docs/images/badges/license.svg" alt="MIT License" /></a>
   </p>
@@ -23,7 +23,9 @@
   </p>
 </div>
 
-> 当前版本 **v1.6.2 / versionCode 25**。下方界面截图保留 v1.6.1 历史预览；使用习惯现已简化为一个开关。
+> 测试版本 **v1.6.3 / versionCode 26**（新包名真机验收待完成；旧包名稳定版保留为 v1.6.2）。下方界面截图保留 v1.6.1 历史预览；使用习惯现已简化为一个开关。
+
+> **旧用户迁移：** v1.6.3 起安装包名为 `io.github.dx101625.campusadblock`，不能覆盖旧包名 `com.campus.adblock`。先阅读[迁移指南](docs/package-migration.md)，导入配置，在框架中关闭旧模块、启用新版并重选作用域，避免重复 Hook。
 
 ## 项目简介
 
@@ -86,7 +88,7 @@
 
 ## 下载
 
-**首个公开版本：v1.6.1。** [下载正式 APK](https://github.com/dx101625/campus-adblock/releases/download/v1.6.1/campus-adblock-v1.6.2.apk) · [发布说明、源码与 SHA-256](https://github.com/dx101625/campus-adblock/releases/tag/v1.6.2)。
+**首个公开版本：v1.6.1。** [下载正式 APK](https://github.com/dx101625/campus-adblock/releases/download/v1.6.1/campus-adblock-v1.6.3.apk) · [发布说明、源码与 SHA-256](https://github.com/dx101625/campus-adblock/releases/tag/v1.6.2)。
 
 发布包使用项目原签名，后续版本可覆盖升级。GitHub Actions 的构建产物是供开发检查的未签名包，与正式发布包分开。
 

@@ -223,7 +223,7 @@ public final class Cfg {
     private static boolean broadcast(Context ctx, String pkg, String appVer) {
         try {
             Intent intent = new Intent(StatusReceiver.ACTION);
-            intent.setClassName("com.campus.adblock", "com.campus.adblock.StatusReceiver");
+            intent.setClassName(ModuleIdentity.ID, ModuleIdentity.STATUS_RECEIVER);
             intent.putExtra("pkg", pkg);
             intent.putExtra("ver", appVer == null ? "" : appVer);
             ctx.sendBroadcast(intent);

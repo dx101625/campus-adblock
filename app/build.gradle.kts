@@ -20,11 +20,11 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.campus.adblock"
+        applicationId = "io.github.dx101625.campusadblock"
         minSdk = 24
         targetSdk = 34
-        versionCode = providers.environmentVariable("CAMPUS_VERSION_CODE").orElse("25").get().toInt()
-        versionName = providers.environmentVariable("CAMPUS_VERSION").orElse("1.6.2").get()
+        versionCode = providers.environmentVariable("CAMPUS_VERSION_CODE").orElse("26").get().toInt()
+        versionName = providers.environmentVariable("CAMPUS_VERSION").orElse("1.6.3").get()
     }
 
     buildTypes {
@@ -42,7 +42,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    buildFeatures { compose = true }
+    buildFeatures { compose = true; buildConfig = true }
 
     packaging {
         resources {

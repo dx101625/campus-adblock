@@ -14,7 +14,7 @@ import android.content.SharedPreferences;
  */
 public class StatusReceiver extends BroadcastReceiver {
 
-    static final String ACTION = "com.campus.adblock.STATUS";
+    static final String ACTION = ModuleIdentity.STATUS_ACTION;
 
     @Override
     public void onReceive(Context context, Intent intent) {

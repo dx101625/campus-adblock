@@ -3,6 +3,13 @@
 版本号规则：`主版本.次版本.修订号`，与 APK 的 `versionCode` 一起在
 `app/src/main/resources/META-INF/xposed/module.prop`、`build.py` 和 `app/build.gradle.kts` 里同步。
 
+## 1.6.3 — 2026-11-03
+
+- 应用包名改为 `io.github.dx101625.campusadblock`，采用 GitHub 账号命名空间，准备模块仓库收录。
+- 跨进程配置/状态 Provider 与显式广播跟随 applicationId，避免新旧安装间通道冲突；Java/Kotlin 源码 namespace 保留原值。
+- 保留原签名、原图标、Miuix/玻璃 UI 和 v1.6.2 的单开关自动流程。
+- 配置备份格式兼容旧版 schema 1/2；旧包名无法覆盖安装，需导出/导入配置，并在框架重新启用、设置作用域，详见[迁移指南](docs/package-migration.md)。
+
 ## 1.6.2 — 2026-10-31
 
 - 自动流程简化为一个开关：开启直达订单预览，关闭仅去广告。

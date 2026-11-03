@@ -21,7 +21,7 @@ import android.os.Bundle;
  */
 public class StatusProvider extends ContentProvider {
 
-    public static final String AUTHORITY = "com.campus.adblock.status";
+    public static final String AUTHORITY = ModuleIdentity.STATUS_AUTHORITY;
     public static final String GROUP = "campus_status";
 
     public static Uri uri() {

@@ -45,4 +45,21 @@ public class LocalDataTest {
         assertFalse(PreferenceRules.verifiedQiekj("1.145.0"));
         assertFalse(PreferenceRules.verifiedQiekj(null));
     }
+    @Test public void legacySchemaTwoBackupKeepsDeviceAndSelectedProfileAcrossPackageRename() {
+        String data="{\"format\":\"campus-adblock-config\",\"schema\":2,\"includesDevices\":true,\"values\":{"
+            +"\"q.mode\":\"preview\",\"q.profile\":\"one\",\"q.qr\":\"https://device.example/?NQT=fixture\","
+            +"\"ui.devices\":[{\"id\":\"one\",\"name\":\"Fixture\",\"qr\":\"https://device.example/?NQT=fixture\"}]}}";
+        var plan=LocalData.INSTANCE.parseBackup(data);
+        assertTrue(plan.getIncludesDevices());
+        assertEquals("one",plan.getValues().get("q.profile"));
+        assertEquals("preview",plan.getValues().get("q.mode"));
+        assertTrue(plan.getValues().get("ui.devices").toString().contains("Fixture"));
+    }
+    @Test public void backupWithoutDevicesDoesNotInventDeviceValuesDuringMigration() {
+        var plan=LocalData.INSTANCE.parseBackup(backup("{\"q.mode\":\"ads\",\"q.pay\":\"wechat\"}",false));
+        assertFalse(plan.getIncludesDevices());
+        assertFalse(plan.getValues().containsKey("q.qr"));
+        assertFalse(plan.getValues().containsKey("q.profile"));
+        assertFalse(plan.getValues().containsKey("ui.devices"));
+    }
 }

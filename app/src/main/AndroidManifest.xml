@@ -39,14 +39,14 @@
             android:name=".StatusReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.campus.adblock.STATUS" />
+                <action android:name="${applicationId}.STATUS" />
             </intent-filter>
         </receiver>
 
         <!-- 目标 App 里的 hook 装好后跨进程调一次，把「已生效」写进模块自己的首选项 -->
         <provider
             android:name=".StatusProvider"
-            android:authorities="com.campus.adblock.status"
+            android:authorities="${applicationId}.status"
             android:exported="true"
             android:enabled="true" />
 

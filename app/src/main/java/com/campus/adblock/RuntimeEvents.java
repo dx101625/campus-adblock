@@ -29,7 +29,7 @@ public final class RuntimeEvents {
                 if (out != null && out.getBoolean("ok")) return;
             } catch (Throwable ignored) {}
             try {
-                Intent i = new Intent(StatusReceiver.ACTION).setClassName("com.campus.adblock", "com.campus.adblock.StatusReceiver");
+                Intent i = new Intent(StatusReceiver.ACTION).setClassName(ModuleIdentity.ID, ModuleIdentity.STATUS_RECEIVER);
                 i.putExtra("pkg", pkg).putExtra("event_kind", kind).putExtra("event_detail", message);
                 app.sendBroadcast(i);
             } catch (Throwable ignored) {}
