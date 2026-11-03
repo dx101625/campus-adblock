@@ -18,8 +18,8 @@ ROOT = Path(__file__).resolve().parent
 JAVA = Path(os.environ["JAVA_HOME"]) if os.environ.get("JAVA_HOME") else Path(shutil.which("java") or "java").resolve().parent.parent
 GRADLE = Path(os.environ.get("CAMPUS_GRADLE", str(ROOT / ("tools/gradle-9.7.1/bin/gradle.bat" if os.name == "nt" else "tools/gradle-9.7.1/bin/gradle"))))
 SDK = Path(os.environ.get("CAMPUS_ANDROID_SDK", os.environ.get("ANDROID_HOME", str(ROOT / "tools/android-sdk"))))
-VERSION = os.environ.get("CAMPUS_VERSION", "1.6.3")
-CODE = os.environ.get("CAMPUS_VERSION_CODE", "26")
+VERSION = os.environ.get("CAMPUS_VERSION", "1.6.4")
+CODE = os.environ.get("CAMPUS_VERSION_CODE", "27")
 CERT = "95462bfe83602a10471cc127a99ad27de4411eba1c00284844577260eda1f14d"
 
 def main():
@@ -60,7 +60,7 @@ def main():
     command = [str(GRADLE), "--no-daemon", "--console=plain", "--max-workers=4", ":app:assembleRelease"]
     if "--offline" in sys.argv: command += ["--offline"]
     if not sign: command += ["-PcampusNoSign=true"]
-    logs = ROOT / "artifacts/lsposed-onboarding-1.6.3-20261103"
+    logs = ROOT / "artifacts/compat-1.145.0-20261103"
     logs.mkdir(parents=True, exist_ok=True)
     with (logs / "build.log").open("w", encoding="utf-8") as stream:
         process = subprocess.Popen(command, cwd=ROOT, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding="utf-8", errors="replace")

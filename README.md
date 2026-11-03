@@ -23,7 +23,7 @@
   </p>
 </div>
 
-> 测试版本 **v1.6.3 / versionCode 26**（新包名真机验收待完成；旧包名稳定版保留为 v1.6.2）。下方界面截图保留 v1.6.1 历史预览；使用习惯现已简化为一个开关。
+> 测试版本 **v1.6.4 / versionCode 27**（新包名真机验收待完成；旧包名稳定版保留为 v1.6.2）。下方界面截图保留 v1.6.1 历史预览；使用习惯现已简化为一个开关。
 
 > **旧用户迁移：** v1.6.3 起安装包名为 `io.github.dx101625.campusadblock`，不能覆盖旧包名 `com.campus.adblock`。先阅读[迁移指南](docs/package-migration.md)，导入配置，在框架中关闭旧模块、启用新版并重选作用域，避免重复 Hook。
 
@@ -90,7 +90,7 @@
 
 **稳定版：v1.6.2（旧包名）。** [下载正式 APK](https://github.com/dx101625/campus-adblock/releases/download/v1.6.2/campus-adblock-v1.6.2.apk) · [发布说明、源码与 SHA-256](https://github.com/dx101625/campus-adblock/releases/tag/v1.6.2)。
 
-**新包名测试版 v1.6.3：** 源码和本地 APK 已就绪；附件上传与真机验收尚待完成，暂未发布。请先阅读[迁移指南](docs/package-migration.md)。
+**新包名测试版 v1.6.4：** 源码和本地 APK 已就绪；附件上传与真机验收尚待完成，暂未发布。请先阅读[迁移指南](docs/package-migration.md)。
 
 发布包沿用项目原签名；同包名后续版本可覆盖升级，跨包名需迁移。GitHub Actions 产物是供开发检查的未签名包。
 

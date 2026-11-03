@@ -23,8 +23,8 @@ android {
         applicationId = "io.github.dx101625.campusadblock"
         minSdk = 24
         targetSdk = 34
-        versionCode = providers.environmentVariable("CAMPUS_VERSION_CODE").orElse("26").get().toInt()
-        versionName = providers.environmentVariable("CAMPUS_VERSION").orElse("1.6.3").get()
+        versionCode = providers.environmentVariable("CAMPUS_VERSION_CODE").orElse("27").get().toInt()
+        versionName = providers.environmentVariable("CAMPUS_VERSION").orElse("1.6.4").get()
     }
 
     buildTypes {

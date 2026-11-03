@@ -42,7 +42,8 @@ public class LocalDataTest {
     }
     @Test public void unknownAppVersionsPauseAutomation() {
         assertTrue(PreferenceRules.verifiedQiekj("1.144.0"));
-        assertFalse(PreferenceRules.verifiedQiekj("1.145.0"));
+        assertTrue(PreferenceRules.verifiedQiekj("1.145.0"));
+        assertFalse(PreferenceRules.verifiedQiekj("1.146.0"));
         assertFalse(PreferenceRules.verifiedQiekj(null));
     }
     @Test public void legacySchemaTwoBackupKeepsDeviceAndSelectedProfileAcrossPackageRename() {

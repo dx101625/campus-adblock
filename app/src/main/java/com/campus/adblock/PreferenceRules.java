@@ -26,7 +26,7 @@ public final class PreferenceRules {
         if(allowed&&grant.optInt("remaining")==1)grants.remove(key);
         return allowed;
     }
-    public static boolean verifiedQiekj(String version) { return "1.144.0".equals(version); }
+    public static boolean verifiedQiekj(String version) { return "1.144.0".equals(version) || "1.145.0".equals(version); }
     public static int paymentMethod(String key) {
         if ("unionpay".equals(key)) return 52;
         if ("alipay".equals(key)) return 13;

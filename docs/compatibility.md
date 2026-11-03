@@ -2,7 +2,7 @@
 
 | 组件 | 当前适配基准 |
 | --- | --- |
-| 胖乖生活 | 1.144.0 / versionCode294，`com.qiekj.user` |
+| 胖乖生活 | 1.144.0 / versionCode294、1.145.0 / versionCode299，`com.qiekj.user` |
 | 智趣校园 | 6.5.29，`com.klcxkj.zqxy` |
 | 真机 | PJZ110，Android17/API37 |
 | 模块声明 | minSdk24 / targetSdk34；modern libxposed API102 |

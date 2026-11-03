@@ -61,10 +61,10 @@ import top.yukonga.miuix.kmp.theme.MiuixTheme
             BoxWithConstraints(Modifier.fillMaxWidth()) {
                 val stack = maxWidth < 330.dp || androidx.compose.ui.platform.LocalDensity.current.fontScale > 1.2f
                 if (stack) Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    AppStatusCard(activity, StatusController.Q, "胖乖生活", "胖", "1.144.0", qBeat, ui, Modifier.fillMaxWidth()) { onApp("qiekj") }
+                    AppStatusCard(activity, StatusController.Q, "胖乖生活", "胖", "1.145.0", qBeat, ui, Modifier.fillMaxWidth()) { onApp("qiekj") }
                     AppStatusCard(activity, StatusController.Z, "智趣校园", "趣", "6.5.29", zBeat, ui, Modifier.fillMaxWidth()) { onApp("zqxy") }
                 } else Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    AppStatusCard(activity, StatusController.Q, "胖乖生活", "胖", "1.144.0", qBeat, ui, Modifier.weight(1f)) { onApp("qiekj") }
+                    AppStatusCard(activity, StatusController.Q, "胖乖生活", "胖", "1.145.0", qBeat, ui, Modifier.weight(1f)) { onApp("qiekj") }
                     AppStatusCard(activity, StatusController.Z, "智趣校园", "趣", "6.5.29", zBeat, ui, Modifier.weight(1f)) { onApp("zqxy") }
                 }
             }
