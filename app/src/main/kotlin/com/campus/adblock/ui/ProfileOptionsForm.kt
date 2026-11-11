@@ -25,7 +25,7 @@ import top.yukonga.miuix.kmp.theme.MiuixTheme
 
     ProfileChoice("机号", options.machine, listOf("inherit", "left1", "right2", "auto", "none"), listOf("全局", "左1", "右2", "自动", "手动"), "profile.machine") { onChange(options.copy(machine = it)) }
     ProfileChoice("档位", options.tier, listOf("inherit", "shortest", "longest"), listOf("全局", "最短", "最长"), "profile.tier") { onChange(options.copy(tier = it)) }
-    ProfileChoice("支付方式", options.pay, listOf("inherit", "unionpay", "alipay", "wechat", "none"), listOf("全局", "银联", "支付宝", "微信", "原App"), "profile.pay") { onChange(options.copy(pay = it)) }
+    ProfileChoice("支付方式", options.pay, listOf("inherit") + LocalData.paymentValues, listOf("全局", "银联支付", "支付宝", "微信", "抖音支付", "原App"), "profile.pay") { onChange(options.copy(pay = it)) }
     ProfileChoice("自动使用优惠券", options.coupon, listOf("inherit", "yes", "no"), listOf("全局", "允许", "禁止"), "profile.coupon") { onChange(options.copy(coupon = it)) }
     ProfileChoice("自动使用积分", options.points, listOf("inherit", "yes", "no"), listOf("全局", "允许", "禁止"), "profile.points") { onChange(options.copy(points = it)) }
 }

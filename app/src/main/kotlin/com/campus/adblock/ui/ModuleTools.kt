@@ -275,7 +275,7 @@ class ModuleTools(private val activity: SettingsActivity, private val onChanged:
     private fun diagnostic(): String = buildString {
         val version = runCatching { activity.packageManager.getPackageInfo(activity.packageName, 0).versionName }.getOrDefault("")
         append("校园设备去广告 $version\nAndroid ${Build.VERSION.RELEASE} / API ${Build.VERSION.SDK_INT}\n机型 ${Build.MODEL}\n")
-        for ((pkg, verified) in listOf(StatusController.Q to "1.145.0", StatusController.Z to "6.5.29")) {
+        for ((pkg, verified) in listOf(StatusController.Q to "1.146.0", StatusController.Z to "6.5.29")) {
             val installed = runCatching { activity.packageManager.getPackageInfo(pkg, 0).versionName }.getOrDefault("未安装")
             append("\n${if (pkg == StatusController.Q) "胖乖生活" else "智趣校园"}：$installed\n适配：${if (installed == verified) "当前版本已验证" else "当前版本尚未验证"}\n")
         }

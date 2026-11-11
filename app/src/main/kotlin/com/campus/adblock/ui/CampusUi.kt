@@ -362,7 +362,7 @@ class CampusUi(private val activity: SettingsActivity, saved: Bundle?) : AutoClo
             Text(s("pay_title"), style = MiuixTheme.textStyles.footnote1,
                 color = MiuixTheme.colorScheme.onSurfaceVariantSummary,
                 modifier = Modifier.padding(start = 16.dp, top = 12.dp))
-            Radios("q.pay", "unionpay", listOf(s("pay_union"), s("pay_ali"), s("pay_wechat"), s("pay_none")), listOf("unionpay", "alipay", "wechat", "none"))
+            Radios("q.pay", "unionpay", listOf(s("pay_union"), s("pay_ali"), s("pay_wechat"), s("pay_douyin"), s("pay_none")), LocalData.paymentValues)
             Divider(); Setting("q.coupon", false, s("coupon"), "允许原App自动选择可用优惠券，仍遵循原有可用性校验")
             Divider(); Setting("q.points", false, s("points"), "允许原App自动选择可用积分，保留原有验证流程")
         }

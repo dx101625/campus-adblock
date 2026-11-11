@@ -57,9 +57,10 @@
     <string name="tier_long">最长时长</string>
     <string name="order_title">订单预览</string>
     <string name="pay_title">支付方式</string>
-    <string name="pay_union">银联</string>
+    <string name="pay_union">银联支付</string>
     <string name="pay_ali">支付宝</string>
     <string name="pay_wechat">微信</string>
+    <string name="pay_douyin">抖音支付</string>
     <string name="pay_none">跟随原App默认选项，模块不做预选</string>
     <string name="coupon">允许自动使用优惠券</string>
     <string name="points">允许自动使用积分</string>

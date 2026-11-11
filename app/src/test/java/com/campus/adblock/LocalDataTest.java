@@ -21,7 +21,7 @@ public class LocalDataTest {
         assertFalse(LocalData.INSTANCE.validQr("https://device.example/?a=1"));
     }
     @Test public void validatesCompleteBackupBeforeAnyMutation() {
-        assertEquals(2, LocalData.INSTANCE.parseBackup(backup("{\"q.ads\":false,\"q.pay\":\"wechat\"}",false)).getValues().size());
+        assertEquals(2, LocalData.INSTANCE.parseBackup(backup("{\"q.ads\":false,\"q.pay\":\"douyin\"}",false)).getValues().size());
         rejected(backup("{\"q.ads\":\"false\"}",false));
         rejected(backup("{\"q.pay\":\"wallet\"}",false));
         rejected(backup("{\"q.ads\":true,\"shell\":\"anything\"}",false));
@@ -43,7 +43,8 @@ public class LocalDataTest {
     @Test public void unknownAppVersionsPauseAutomation() {
         assertTrue(PreferenceRules.verifiedQiekj("1.144.0"));
         assertTrue(PreferenceRules.verifiedQiekj("1.145.0"));
-        assertFalse(PreferenceRules.verifiedQiekj("1.146.0"));
+        assertTrue(PreferenceRules.verifiedQiekj("1.146.0"));
+        assertFalse(PreferenceRules.verifiedQiekj("1.147.0"));
         assertFalse(PreferenceRules.verifiedQiekj(null));
     }
     @Test public void legacySchemaTwoBackupKeepsDeviceAndSelectedProfileAcrossPackageRename() {
@@ -57,7 +58,7 @@ public class LocalDataTest {
         assertTrue(plan.getValues().get("ui.devices").toString().contains("Fixture"));
     }
     @Test public void backupWithoutDevicesDoesNotInventDeviceValuesDuringMigration() {
-        var plan=LocalData.INSTANCE.parseBackup(backup("{\"q.mode\":\"ads\",\"q.pay\":\"wechat\"}",false));
+        var plan=LocalData.INSTANCE.parseBackup(backup("{\"q.mode\":\"ads\",\"q.pay\":\"douyin\"}",false));
         assertFalse(plan.getIncludesDevices());
         assertFalse(plan.getValues().containsKey("q.qr"));
         assertFalse(plan.getValues().containsKey("q.profile"));

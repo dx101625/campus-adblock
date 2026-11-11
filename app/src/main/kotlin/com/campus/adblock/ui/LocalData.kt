@@ -22,12 +22,13 @@ data class RestorePlan(val values: Map<String, Any>, val includesDevices: Boolea
 /** Own-process local data. QR text is excluded from diagnostics and optional in backups. */
 object LocalData {
     const val FAVORITES = "ui.devices"
+    internal val paymentValues = listOf("unionpay", "alipay", "wechat", "douyin", "none")
     private val booleans = mapOf("q.ads" to true, "q.splash" to true, "q.scan" to true,
         "q.advance" to true, "q.coupon" to false, "q.points" to false, "z.ads" to true,
         "z.tab" to true, "g.shake" to true, "g.jump" to true, "g.log" to true,
         "q.price.guard" to true, "q.pause" to true, "ui.haptics" to true, "ui.motion" to true)
     private val choices = mapOf("q.machine" to listOf("left1", "right2", "auto", "none"),
-        "q.tier" to listOf("shortest", "longest"), "q.pay" to listOf("unionpay", "alipay", "wechat", "none"),
+        "q.tier" to listOf("shortest", "longest"), "q.pay" to paymentValues,
         "g.jump.mode" to listOf("standard", "strict"), "q.mode" to listOf("ads", "device", "preview"),
         "q.launch" to listOf("direct", "shortcut"), "ui.theme" to listOf("system", "light", "dark"), "ui.glass" to listOf("liquid", "clear"))
     private val defaults = mapOf("q.machine" to "right2", "q.tier" to "shortest", "q.pay" to "unionpay", "g.jump.mode" to "standard",
@@ -64,7 +65,7 @@ object LocalData {
                 require(value in valid) { "设备${key}设置无效" }; return value
             }
             val options = DeviceOptions(option("mode", modeValues), option("machine", listOf("inherit", "left1", "right2", "auto", "none")),
-                option("tier", listOf("inherit", "shortest", "longest")), option("pay", listOf("inherit", "unionpay", "alipay", "wechat", "none")),
+                option("tier", listOf("inherit", "shortest", "longest")), option("pay", listOf("inherit") + paymentValues),
                 option("coupon", listOf("inherit", "yes", "no")), option("points", listOf("inherit", "yes", "no")))
             FavoriteDevice(id, name, qr, group, icon, options)
         }

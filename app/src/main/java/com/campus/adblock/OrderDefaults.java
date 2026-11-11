@@ -206,25 +206,26 @@ final class OrderDefaults {
             RuntimeEvents.note(a, "selection", "支付方式遵循原App，不做预选");
             return;
         }
-        Object union = null;
+        Object selected = null;
         for (Object item : channels) {
             if (((Number) AppReflect.call(item, "getMethod")).intValue() == wanted
                     && Boolean.TRUE.equals(AppReflect.call(item, "getCanChecked"))) {
-                union = item;
+                selected = item;
                 break;
             }
         }
-        if (union == null) {
+        if (selected == null) {
             ModuleLog.w(TAG, "defaults: requested payment unavailable: " + Cfg.qiekjPay + "; original choices retained");
             RuntimeEvents.note(a, "selection", "所选支付方式当前不可用，保留原App选项");
             return;
         }
-        for (Object item : channels) AppReflect.call(item, "setChecked", item == union);
+        for (Object item : channels) AppReflect.call(item, "setChecked", item == selected);
         ModuleLog.i(TAG, "defaults: payment=" + Cfg.qiekjPay + " method=" + wanted + " selected in native channel model; no payment action");
         String payment = switch (Cfg.qiekjPay) {
             case "unionpay" -> "银联支付";
             case "alipay" -> "支付宝";
             case "wechat" -> "微信支付";
+            case "douyin" -> "抖音支付";
             default -> "支付跟随App";
         };
         RuntimeEvents.note(a, "selection", "已应用订单偏好：" + payment + "；优惠券" + (Cfg.qiekjCoupon ? "允许自动选择" : "手动选择") + "，积分" + (Cfg.qiekjPoints ? "允许自动选择" : "手动选择"));

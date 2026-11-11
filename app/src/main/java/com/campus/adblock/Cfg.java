@@ -41,7 +41,7 @@ public final class Cfg {
     public static String qiekjMachine = "right2";
     /** 档位：shortest / longest。 */
     public static String qiekjTier = "shortest";
-    /** 支付方式：unionpay / alipay / wechat / none。 */
+    /** 支付方式：unionpay / alipay / wechat / douyin / none。 */
     public static String qiekjPay = "unionpay";
     /** 订单预览页是否自动勾选优惠券。 */
     public static boolean qiekjCoupon = false;

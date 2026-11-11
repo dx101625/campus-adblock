@@ -8,6 +8,7 @@ public class PreferenceRulesTest {
         assertEquals(52, PreferenceRules.paymentMethod("unionpay"));
         assertEquals(13, PreferenceRules.paymentMethod("alipay"));
         assertEquals(32, PreferenceRules.paymentMethod("wechat"));
+        assertEquals(2101, PreferenceRules.paymentMethod("douyin"));
         assertEquals(-1, PreferenceRules.paymentMethod("none"));
         assertEquals(-1, PreferenceRules.paymentMethod("unknown"));
     }
